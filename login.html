@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Peer Login</title>
+            <link rel="stylesheet" href="CSS/style.css">
+        </head>
+<body>
+<main class = "grid-container">
+    <form method="post" action="/server/loginsys.php" id = "Loginform">
+        <div class = "header1">
+            <div class = grid-100>
+                <div class = "logo">
+                    <img src = "#">
+                </div>
+
+                <div class = "login" >
+                    <table >
+                        <tr >
+                            <td> Email(Username)</td>
+                            <td><input  class="login-txt" type="email" name="username" placeholder="Enter Email(Username)" ></td>
+                            <td>Password</td>
+                            <td><input class="login-txt" type="Password" name="Password" placeholder="Enter Password"></td>
+                            <td>&nbsp</td>
+                            <td><input type="Submit" name="Login" value="Login" class="btn"></td>
+                            <td> <a href="#">Forgotten Password?</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id = "title"><br>
+        <h1><b>Peer Review</b></h1>
+        <h2>Create an Account </h2>
+    </div>
+</main>
+
+<div class="grid-container">
+    <div class = grid-50>
+        <div id = "AdminForm">
+            <form method="post" action="server/lecturersignup.php">
+                <h2>Create Admin Account</h2>
+                <div class="input">
+                    <label>FirstName</label>
+                    <input type="text" name="fname" placeholder="fname">
+                </div>
+                <div class="input">
+                    <label>LastName</label>
+                    <input type="text" name="lname" placeholder="lname">
+                </div>
+                <div class="input">
+                    <label>Username</label>
+                    <input type="text" name="uname" placeholder="uname">
+                    <div class="input">
+                        <label>Department</label>
+                        <input type="dept" name="dept" placeholder="Dept">
+                    </div>
+                    <div class="input">
+                        <label>Qualification</label>
+                        <input type="qualification" name="qualification" placeholder="qualification">
+                    </div>
+                    <div class="input">
+                        <label>Contact</label>
+                        <input type="contact" name="contact" placeholder="contact">
+                    </div>
+                    <!--<div class="input">
+                        <label>StaffId</label>
+                        <input type="stafid" name="stafid" placeholder="Staff_id">
+                    </div>-->
+                    <div class="input">
+                        <label>Address</label>
+                        <input type="address" name="address" placeholder="address">
+                    </div>
+                    <div class="input">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <!-- <div class="input">
+                         <label>Confirm Password</label>
+                         <input type="password" name="password1" placeholder="Confirm_Password">
+                     </div>-->
+                    <div class="input">
+                        <button type="submit" name="adminReg" class="btn">Register as Admin</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class = grid-50>
+        <div id = "StudForm">
+            <form method="post" action="server/studsign.php">
+                <h2>Create Student Account</h2>
+                <div class="input">
+                    <label>FirstName</label>
+                    <input type="text" name="first" placeholder="first">
+                </div>
+                <div class="input">
+                    <label>LastName</label>
+                    <input type="text" name="last" placeholder="last">
+                </div>
+                <div class="input">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="username">
+                </div>
+                <div class="input">
+                    <label>Course</label>
+                    <input type="text" name="course" placeholder="Course">
+                </div>
+                <div class="input">
+                    <label>Grade</label>
+                    <input type="text" name="=grade" placeholder="grade">
+                </div>
+                <div class="input">
+                    <div class="input">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="email">
+                    </div>
+                    <div class="input">
+                        <label>Contact</label>s`
+                        <input type="contact" name="contact" placeholder="contact">
+                    </div>
+                    <div class="input">
+                        <label>IndexNumber</label>
+                        <input type="index" name="index" placeholder="Indexno">
+                    </div>
+                    <div class="input">
+                        <label>Address</label>
+                        <input type="add" name="address" placeholder="address">
+                    </div>
+                    <div class="input">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+                    <div class="input">
+                        <button type="Submit" name="studReg" class="btn">Register as Student</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+</title>
+</head>
+<body>
+
+</body>
+</html>
