@@ -1,8 +1,71 @@
 <?php
+
 session_start();
 
-include_once 'connection.php';
 
+if (isset($_POST['login'])) {
+
+
+require_once('connection.php');
+
+    if($conn===false){
+        die("connection failed");
+    }
+
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $category=$_POST['category'];
+
+    if ($category='Lecturer'){
+    $sql="SELECT email,password FROM lecturer WHERE email='$email' AND password='$password'";
+    $sql_lecturer=mysqli_query($conn,$sql);
+    $row=mysqli_fetch_array($sql_lecturer);
+    $count=mysqli_num_rows($sql_lecturer);
+    if ($count==1){
+        $_SESSION['email']=$email;
+
+        header('location:../lecturerhome.php');
+    }else{
+        header('location:../index.php');
+
+    }
+
+    }elseif ($category='Student'){
+        $sql="SELECT email,password FROM student WHERE email='$email' AND password='$password'";
+        $sql_student=mysqli_query($conn,$sql);
+        $row=mysqli_fetch_array($sql_student);
+        $count=mysqli_num_rows($sql_student);
+        if ($count==1){
+            $_SESSION['email']=$email;
+
+            header('location:../studenthome.php');
+        }else{
+            header('location:../index.php');
+
+        }
+
+    }else{
+        echo 'Bad user category';
+        header('location:../index.php');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
@@ -28,7 +91,7 @@ if (isset($_POST['login'])) {
             header('location: ../homepage.php?login=No Access');
             exit();
         } else {
-            $id = "SELECT isAdmin FROM login WHERE username='$username' OR email= '$username' ";
+            $id = "SELECT islecturer   FROM login WHERE username='$username' OR email= '$username' ";
             $result = mysqli_query($conn, $id);
             $check1 = mysqli_num_rows($result);
             $rows = mysqli_fetch_assoc($result);
@@ -42,7 +105,7 @@ if (isset($_POST['login'])) {
                     header('location: ../homepage.php?password_wrong');
                 } else if ($password1 = true) {
                     $_SESSION['lecturer'] = $row['username'];
-                    header('location : ../lecturerhomepage.php');
+                    header('location : ../lecturerhome.php');
                     $_SESSION['Awesome'] = "Login successful";
                     exit();
                 }
@@ -71,3 +134,4 @@ if (isset($_POST['login'])) {
         }
     }
 }
+*/

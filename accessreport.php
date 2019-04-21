@@ -12,7 +12,7 @@ $grademembers=new grademembers();
 
 if($_SESSION['user'] == null || strtolower($_SESSION['user']['function']) != 'student'){
     $_SESSION['error'] = 'You cannot make change!';
-    header('Location: ../login.php');
+    header('Location: ../index.php');
 }
 else
 {

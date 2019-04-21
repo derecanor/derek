@@ -10,7 +10,7 @@ $id = htmlspecialchars($_GET['id']);
 
 if($_SESSION['user'] == null || strtolower($_SESSION['user']['function']) != 'lecturer'){
     $_SESSION['error'] = 'You cannot make this change!';
-    header('Location: ../login.php');
+    header('Location: ../index.php');
 
 }
 else

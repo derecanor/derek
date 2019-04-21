@@ -1,13 +1,14 @@
+<?php include ('server/connection.php')?>
 <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Peer Login</title>
-            <link rel="stylesheet" href="CSS/style.css">
-        </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peer Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <body>
 <main class = "grid-container">
-    <form method="post" action="/server/loginsys.php" id = "Loginform">
+    <form method="post" action="server/loginsystem.php" id = "Loginform">
         <div class = "header1">
             <div class = grid-100>
                 <div class = "logo">
@@ -17,13 +18,18 @@
                 <div class = "login" >
                     <table >
                         <tr >
-                            <td> Email(Username)</td>
-                            <td><input  class="login-txt" type="email" name="username" placeholder="Enter Email(Username)" ></td>
+                            <td>Select Category</td>
+                            <td><select name="category">
+                                    <option value="Lecturer">Lecturer</option>
+                                    <option value="Student">Student</option>
+                                </select></td>
+                            <td> Email</td>
+                            <td><input  class="login-txt" type="email" name="email" placeholder="Enter Email" ></td>
                             <td>Password</td>
-                            <td><input class="login-txt" type="Password" name="Password" placeholder="Enter Password"></td>
+                            <td><input class="login-txt" type="password" name="password" placeholder="Enter Password"></td>
                             <td>&nbsp</td>
-                            <td><input type="Submit" name="Login" value="Login" class="btn"></td>
-                            <td> <a href="#">Forgotten Password?</a></td>
+                            <td><input type="Submit" name="login" value="login" class="btn"></td>
+
                         </tr>
                     </table>
                 </div>
@@ -39,9 +45,9 @@
 
 <div class="grid-container">
     <div class = grid-50>
-        <div id = "AdminForm">
+        <div id = "LecturerForm">
             <form method="post" action="server/lecturersignup.php">
-                <h2>Create Admin Account</h2>
+                <h2>Create Lecturer Account</h2>
                 <div class="input">
                     <label>FirstName</label>
                     <input type="text" name="fname" placeholder="fname">
@@ -65,10 +71,6 @@
                         <label>Contact</label>
                         <input type="contact" name="contact" placeholder="contact">
                     </div>
-                    <!--<div class="input">
-                        <label>StaffId</label>
-                        <input type="stafid" name="stafid" placeholder="Staff_id">
-                    </div>-->
                     <div class="input">
                         <label>Address</label>
                         <input type="address" name="address" placeholder="address">
@@ -81,12 +83,8 @@
                         <label>Password</label>
                         <input type="password" name="password" placeholder="Password">
                     </div>
-                    <!-- <div class="input">
-                         <label>Confirm Password</label>
-                         <input type="password" name="password1" placeholder="Confirm_Password">
-                     </div>-->
                     <div class="input">
-                        <button type="submit" name="adminReg" class="btn">Register as Admin</button>
+                        <button type="submit" name="lecturerReg" class="btn">Register as Lecturer</button>
                     </div>
                 </div>
             </form>
@@ -96,7 +94,7 @@
 
     <div class = grid-50>
         <div id = "StudForm">
-            <form method="post" action="server/studsign.php">
+            <form method="post" action="server/studentsignup.php">
                 <h2>Create Student Account</h2>
                 <div class="input">
                     <label>FirstName</label>
@@ -107,33 +105,12 @@
                     <input type="text" name="last" placeholder="last">
                 </div>
                 <div class="input">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="username">
+                    <label>Module</label>
+                    <input type="text" name="module" placeholder="module">
                 </div>
-                <div class="input">
-                    <label>Course</label>
-                    <input type="text" name="course" placeholder="Course">
-                </div>
-                <div class="input">
-                    <label>Grade</label>
-                    <input type="text" name="=grade" placeholder="grade">
-                </div>
-                <div class="input">
                     <div class="input">
                         <label>Email</label>
                         <input type="email" name="email" placeholder="email">
-                    </div>
-                    <div class="input">
-                        <label>Contact</label>s`
-                        <input type="contact" name="contact" placeholder="contact">
-                    </div>
-                    <div class="input">
-                        <label>IndexNumber</label>
-                        <input type="index" name="index" placeholder="Indexno">
-                    </div>
-                    <div class="input">
-                        <label>Address</label>
-                        <input type="add" name="address" placeholder="address">
                     </div>
                     <div class="input">
                         <label>Password</label>
@@ -154,13 +131,3 @@
 
 
 
-
-
-
-
-</title>
-</head>
-<body>
-
-</body>
-</html>
