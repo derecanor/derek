@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-include '../coursework/createcoursework.php';
 
 $coursework_id = htmlspecialchars($_POST['coursework_id']);
 $module_title = htmlspecialchars($_POST['module_title']);

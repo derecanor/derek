@@ -26,8 +26,10 @@ if (!isset($_SESSION['email'])){
             <li><a href= "">LIBRARY</a> </li>
             <li><a href= "">STUDENT GROUPS</a> </li>
             <li><a href= "">STUDENT FEEDBACK</a> </li>
-            <li><a href= "">COURSEWORK </a> </li>
+            <li><a href= "createcoursework.php">COURSEWORK </a> </li>
             <li><a href= "">RESEARCH LINKS</a> </li>
+            <li><a href= "server/logout.php">logout</a> </li>
+
         </ul>
     </div>
 
@@ -43,9 +45,5 @@ if (!isset($_SESSION['email'])){
     </div>
 </header>
 </body>
-</html></title>
-</head>
-<body>
-
-</body>
 </html>
+

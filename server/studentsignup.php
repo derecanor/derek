@@ -24,7 +24,7 @@ if (isset($_POST['studReg'])) {
     $sql_student = "insert into student(first,last,module,email,password) values ('$first', '$last', '$module', '$email', '$password')";
     mysqli_query($conn, $sql_student);
     $_SESSION['email'] = $email;
-    header('location : studenthomepage.php');
+    header('location : studenthome.php');
 
 
 }
